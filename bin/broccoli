@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+var resolve = require('resolve')
+
+process.title = 'broccoli'
+
+var broccoliPath = resolve.sync('broccoli', {
+  basedir: process.cwd()
+})
+var broccoli = require(broccoliPath)
+broccoli.cli()

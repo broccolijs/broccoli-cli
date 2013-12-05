@@ -1,0 +1,21 @@
+{
+  "name": "broccoli-cli",
+  "description": "The broccoli command line interface",
+  "version": "0.0.0",
+  "author": "Jo Liss <joliss42@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joliss/broccoli-cli"
+  },
+  "license": "MIT",
+  "bin": {
+    "broccoli": "bin/broccoli"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "resolve": "~0.6.1"
+  }
+}
