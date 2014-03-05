@@ -1,11 +1,38 @@
 #!/usr/bin/env node
 
-var resolve = require('resolve')
+const Liftoff = require('liftoff');
 
-process.title = 'broccoli'
+const cli = new Liftoff({
+  name: 'broccoli',
+  configName: 'brocfile'
+});
 
-var broccoliPath = resolve.sync('broccoli', {
-  basedir: process.cwd()
-})
-var broccoli = require(broccoliPath)
-broccoli.cli()
+cli.on('require', function (name, module) {
+  console.log('Requiring external module:', name);
+});
+
+cli.on('requireFail', function (name, err) {
+  console.log('Unable to require external module:', name, err);
+});
+
+cli.launch(handler);
+
+function handler (env) {
+  var argv = env.argv;
+
+  if (!env.configPath) {
+    console.log('No brocfile found.');
+    process.exit(1);
+  }
+  if (!env.modulePath) {
+    console.log('No local installation of broccoli found.');
+    process.exit(1);
+  }
+
+  var Brocolli = require(env.modulePath);
+  if(process.cwd() != env.cwd) {
+    process.chdir(env.cwd);
+  }
+
+  Brocolli.cli(env.configPath);
+};
