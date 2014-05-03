@@ -5,7 +5,7 @@
   "author": "Jo Liss <joliss42@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/joliss/broccoli-cli"
+    "url": "https://github.com/broccolijs/broccoli-cli"
   },
   "license": "MIT",
   "bin": {
