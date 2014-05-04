@@ -20,6 +20,6 @@
     "cli"
   ],
   "dependencies": {
-    "resolve": "~0.6.1"
+    "liftoff": "^0.9.6"
   }
 }
