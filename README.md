@@ -1,6 +1,6 @@
 # broccoli-cli
 
-Command line interface for [Broccoli](https://github.com/joliss/broccoli).
+Command line interface for [Broccoli](https://github.com/broccolijs/broccoli).
 
 The job of the `broccoli` command is to load and run the version of Broccoli
 you have installed locally to your project, irrespective of its version.
