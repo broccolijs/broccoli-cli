@@ -9,12 +9,10 @@ try {
     basedir: process.cwd()
   })
 } catch (e) {
-  console.log('The main Broccoli library was not found.')
-  console.log('')
-  console.log('	If this is an existing project, running `npm install` may solve this.')
-  console.log('	Otherwise, running `npm install broccoli` will install the Broccoli library.')
-  console.log('	Running `npm install --save-dev broccoli` will install the Broccoli library, and save it as a development dependency.')
-  console.log('	Running `npm install --save broccoli` will install the Broccoli library, and save it as a regular dependency.')
+  console.error('The main Broccoli library was not found.')
+  console.error('')
+  console.error('If this is an existing project, running `npm install` may solve this.')
+  console.error('Otherwise, running `npm install --save-dev broccoli` will install the Broccoli library.')
   process.exit(1)
 }
 
